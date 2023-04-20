@@ -1,0 +1,261 @@
+REM   Script: Session 10_excurte plsql
+REM   Procedure PL SQL statement
+
+CREATE OR REPLACE PROCEDURE greetings 
+AS BEGIN 
+dbms_output.put_line('Hello World!'); END; /
+/
+
+CREATE OR REPLACE PROCEDURE greetings 
+AS BEGIN 
+dbms_output.put_line('Hello World!'); END; /
+/
+
+CREATE OR REPLACE PROCEDURE greetings 
+AS BEGIN 
+dbms_output.put_line('Hello World!'); END;  
+
+/
+
+CREATE OR REPLACE PROCEDURE greetings 
+AS BEGIN 
+dbms_output.put_line('Hello World!'); END; / 
+EXECUTE greeting;
+/
+
+CREATE OR REPLACE PROCEDURE greetings 
+AS BEGIN 
+dbms_output.put_line('Hello World!'); END;  
+EXECUTE greeting;
+/
+
+CREATE OR REPLACE PROCEDURE greetings 
+AS BEGIN 
+dbms_output.put_line('Hello World!'); END; / 
+
+/
+
+EXECUTE greeting
+
+
+EXECUTE greetings
+
+
+CREATE OR REPLACE PROCEDURE greetings 
+AS BEGIN 
+dbms_output.put_line('Hello World!'); END; / 
+
+/
+
+CREATE OR REPLACE PROCEDURE greeting 
+AS BEGIN 
+dbms_output.put_line('Hello World!'); END; / 
+
+/
+
+CREATE OR REPLACE PROCEDURE greeting 
+AS BEGIN 
+dbms_output.put_line('Hello World!'); END;  
+
+/
+
+EXECUTE greeting
+
+
+CREATE OR REPLACE PROCEDURE sumTwoNum(num1 IN number, num2 IN number) IS 
+  tot number; 
+BEGIN 
+  tot := num1 + num2; 
+  dbms_output.put_line('The sum of ' || num1 || ' and ' || num2 || ' is ' || tot); 
+END; 
+/
+
+SET SERVEROUTPUT ON
+
+
+DECLARE 
+  x NUMBER := 10; 
+  y NUMBER := 20; 
+BEGIN 
+  sumTwoNum(x, y); 
+END; 
+/
+
+select * from emp;
+
+CREATE TABLE emp (  
+    empno   NUMBER(4) PRIMARY KEY,  
+    ename   VARCHAR2(10),  
+    job     VARCHAR2(9),  
+    mgr     NUMBER(4),  
+    hiredate DATE,  
+    sal     NUMBER(7,2),  
+    comm    NUMBER(7,2),  
+    deptno  NUMBER(2)  
+);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) VALUES (7369, 'SMITH', 'CLERK', 7902, TO_DATE('17-DEC-80', 'DD-MON-YY'), 800, 7499, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) VALUES (7499, 'ALLEN', 'SALESMAN', 7698, TO_DATE('20-FEB-81', 'DD-MON-YY'), 1600, 7521, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) VALUES (7521, 'WARD', 'SALESMAN', 7698, TO_DATE('22-FEB-81', 'DD-MON-YY'), 1250, 300, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)VALUES (7566, 'JONES', 'MANAGER', 7839, TO_DATE('02-APR-81', 'DD-MON-YY'), 2975, NULL, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)VALUES (7654, 'MARTIN', 'SALESMAN', 7698, TO_DATE('28-SEP-81', 'DD-MON-YY'), 1250, 1400, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)VALUES (7698, 'BLAKE', 'MANAGER', 7839, TO_DATE('01-MAY-81', 'DD-MON-YY'), 2850, NULL, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)VALUES (7782, 'CLARK', 'MANAGER', 7839, TO_DATE('09-JUN-81', 'DD-MON-YY'), 2450, NULL, 10);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)VALUES (7788, 'SCOTT', 'ANALYST', 7566, TO_DATE('19-APR-87', 'DD-MON-YY'), 3000, NULL, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)VALUES (7839, 'KING', 'PRESIDENT', NULL, TO_DATE('17-NOV-81', 'DD-MON-YY'), 5000, NULL, 10);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)VALUES (7844, 'TURNER', 'SALESMAN', 7698, TO_DATE('08-SEP-81', 'DD-MON-YY'), 1500, 0, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)VALUES (7876, 'ADAMS', 'CLERK', 7788, TO_DATE('23-MAY-87', 'DD-MON-YY'), 1100, NULL, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)VALUES (7900, 'JAMES', 'CLERK', 7698, TO_DATE('03-DEC-81', 'DD-MON-YY'), 950, NULL, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)VALUES (7902, 'FORD', 'ANALYST', 7566, TO_DATE('03-DEC-81', 'DD-MON-YY'), 3000, NULL, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)VALUES (7934, 'MILLER', 'CLERK', 7782, TO_DATE('23-JAN-82', 'DD-MON-YY'), 1300, NULL, 10);
+
+create or replace procedure emp_sal_update 
+IS 
+BEGIN 
+update emp 
+set sal=sal+sal*0.10 
+where job = 'Clerk'; 
+END;
+/
+
+select * from emp;
+
+CREATE OR REPLACE PROCEDURE countManagers IS 
+  v_count NUMBER; 
+BEGIN 
+  SELECT COUNT(*) INTO v_count 
+  FROM emp 
+  WHERE JOB = 'MANAGER'; 
+ 
+  DBMS_OUTPUT.PUT_LINE('There are ' || v_count || ' managers in the employees table.'); 
+END; 
+/
+
+EXECUTE countManagers
+
+
+EXECUTE emp_sal_update
+
+
+CREATE OR REPLACE PROCEDURE display_emp_details AS 
+BEGIN 
+  FOR emp_rec IN (SELECT * FROM emp WHERE name LIKE 'A%' OR name LIKE 'M%') 
+  LOOP 
+    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || emp_rec.emp_id || ', Name: ' || emp_rec.name || ', Salary: ' || emp_rec.salary); 
+  END LOOP; 
+END; 
+/
+
+BEGIN 
+  display_emp_details; 
+END; 
+/
+
+CREATE OR REPLACE PROCEDURE display_emp_details AS 
+BEGIN 
+  FOR emp IN (SELECT * FROM emp WHERE name LIKE 'A%' OR name LIKE 'M%') 
+  LOOP 
+    DBMS_OUTPUT.PUT_LINE( ', Name: ' || emp.name ); 
+  END LOOP; 
+END; 
+/
+
+CREATE OR REPLACE PROCEDURE display_emp_details IS 
+BEGIN 
+  FOR emp_rec IN (SELECT * FROM emp WHERE name LIKE 'A%' OR name LIKE 'M%') 
+  LOOP 
+    DBMS_OUTPUT.PUT_LINE(' Name: ' || emp_rec.name); 
+  END LOOP; 
+END; 
+/
+
+ SELECT * FROM emp WHERE name LIKE 'A%' OR name LIKE 'M%';
+
+select * from emp;
+
+  SELECT * FROM emp WHERE ename LIKE 'A%' OR ename LIKE 'M%';
+
+CREATE OR REPLACE PROCEDURE display_emp_details IS 
+BEGIN 
+  FOR emp_rec IN (SELECT * FROM emp WHERE ename LIKE 'A%' OR ename LIKE 'M%') 
+  LOOP 
+    DBMS_OUTPUT.PUT_LINE(' Name: ' || emp_rec.ename); 
+  END LOOP; 
+END; 
+/
+
+BEGIN 
+  display_emp_details; 
+END; 
+/
+
+create or replace procedure emp_sal_update 
+IS 
+BEGIN 
+update emp 
+set sal=sal+sal*0.10 
+where job = 'Clerk'; 
+END; 
+/
+
+BEGIN 
+  display_emp_details; 
+END; 
+/
+
+create or replace procedure emp_sal_update 
+IS 
+BEGIN 
+update emp 
+set sal=sal+sal*0.10 
+where job = 'Clerk'; 
+END; 
+/
+
+BEGIN 
+  display_emp_details; 
+END; 
+/
+
+BEGIN 
+  display_emp_details; 
+END; 
+/
+
+BEGIN 
+  emp_sal_update; 
+END; 
+/
+
+BEGIN 
+  emp_sal_update; 
+END; 
+/
+
+create or replace procedure emp_sal_update 
+IS 
+BEGIN 
+update emp 
+set sal=sal+sal*0.10 
+where job = 'Clerk'; 
+END; 
+/
+
+BEGIN 
+  emp_sal_update; 
+END; 
+/
+
