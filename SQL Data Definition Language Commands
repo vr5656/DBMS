@@ -1,0 +1,99 @@
+Exp 1 
+
+Q1
+
+CREATE TABLE DEPT (
+  DEPTNO NUMBER,
+  DNAME VARCHAR(20),
+  LOC VARCHAR(20)
+);
+
+CREATE TABLE EMP (
+  EMPNO NUMBER,
+  ENAME VARCHAR(20),
+  JOB VARCHAR(20),
+  MGR NUMBER,
+  HIREDATE DATE,
+  SAL NUMBER,
+  COMM NUMBER,
+  DEPTNO NUMBER
+);
+
+Q2 
+
+SELECT * FROM DEPT;
+SELECT * FROM EMP;
+
+Q3
+
+SELECT table_name FROM user_tables;
+
+SELECT table_name FROM all_tables WHERE owner = 'username';
+
+Q4
+DESCRIBE table_name;
+
+Q5
+
+SELECT DISTINCT object_type FROM user_objects;
+
+SELECT DISTINCT object_type FROM all_objects WHERE owner = 'username';
+
+
+
+
+
+Q6
+
+SELECT object_name, object_type 
+FROM user_objects 
+WHERE object_type IN ('TABLE', 'VIEW', 'SYNONYM', 'SEQUENCE');
+
+SELECT object_name, object_type 
+FROM all_objects 
+WHERE owner = 'username' 
+  AND object_type IN ('TABLE', 'VIEW', 'SYNONYM', 'SEQUENCE');
+
+Q7
+ALTER TABLE DEPT 
+ADD (COMNT VARCHAR2(255), MISCEL VARCHAR2(255));
+
+Q8
+ALTER TABLE DEPT 
+MODIFY (LOC VARCHAR2(15));
+
+Q9
+ALTER TABLE DEPT 
+SET UNUSED (MISCEL);
+
+Q10
+ALTER TABLE DEPT 
+DROP COLUMN COMNT;
+
+Q11
+ALTER TABLE DEPT 
+DROP UNUSED COLUMNS;
+
+Q12
+RENAME DEPT TO DEPT12;
+
+Q13
+DELETE FROM DEPT12;
+
+Q14
+COMMENT ON TABLE DEPT12 IS 'This table contains information about departments.';
+
+SELECT comments 
+FROM user_tab_comments 
+WHERE table_name = 'DEPT12';
+
+Q15
+DROP TABLE DEPT12;
+
+Q16 
+
+ORA-00942: table or view does not exist
+
+
+
+
