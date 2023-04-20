@@ -1,0 +1,22 @@
+Q1
+SELECT TO_CHAR(hiredate, 'DAY MONTH DD, YYYY') AS hiredate_formatted
+FROM EMP
+WHERE deptno = 20;
+
+Q2
+SELECT hiredate
+FROM EMP
+WHERE deptno = 20;
+
+SELECT TO_CHAR(hiredate, 'DD-MON-YYYY HH24:MI:SS') AS hiredate_formatted
+FROM EMP
+WHERE deptno = 20;
+
+Q3
+
+SELECT e.ename AS employee_name,
+       e.hiredate,
+       ADD_MONTHS(e.hiredate, 5) + (150 * (LEVEL - 1)) AS first_salary_review_date
+FROM emp e
+WHERE e.deptno = 20
+CONNECT BY LEVEL <= CEIL(MONTHS_BETWEEN(SYSDATE, e.hiredate) / 5);
