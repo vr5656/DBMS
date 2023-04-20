@@ -1,0 +1,744 @@
+REM   Script: ep-6
+REM   ep6
+
+CREATE TABLE emp ( 
+    empno   NUMBER(4) PRIMARY KEY, 
+    ename   VARCHAR2(10), 
+    job     VARCHAR2(9), 
+    mgr     NUMBER(4), 
+    hiredate DATE, 
+    sal     NUMBER(7,2), 
+    comm    NUMBER(7,2), 
+    deptno  NUMBER(2) 
+);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7369, 'SMITH', 'CLERK', 7902, TO_DATE('17-DEC-80', 'DD-MON-YY'), 800, 7499, 20), 
+(7499, 'ALLEN', 'SALESMAN', 7698, TO_DATE('20-FEB-81', 'DD-MON-YY'), 1600, 7521, 30), 
+(7521, 'WARD', 'SALESMAN', 7698, TO_DATE('22-FEB-81', 'DD-MON-YY'), 1250, 300, 30), 
+(7566, 'JONES', 'MANAGER', 7839, TO_DATE('02-APR-81', 'DD-MON-YY'), 2975, NULL, 20), 
+(7654, 'MARTIN', 'SALESMAN', 7698, TO_DATE('28-SEP-81', 'DD-MON-YY'), 1250, 1400, 30), 
+(7698, 'BLAKE', 'MANAGER', 7839, TO_DATE('01-MAY-81', 'DD-MON-YY'), 2850, NULL, 30), 
+(7782, 'CLARK', 'MANAGER', 7839, TO_DATE('09-JUN-81', 'DD-MON-YY'), 2450, NULL, 10), 
+(7788, 'SCOTT', 'ANALYST', 7566, TO_DATE('19-APR-87', 'DD-MON-YY'), 3000, NULL, 20), 
+(7839, 'KING', 'PRESIDENT', NULL, TO_DATE('17-NOV-81', 'DD-MON-YY'), 5000, NULL, 10), 
+(7844, 'TURNER', 'SALESMAN', 7698, TO_DATE('08-SEP-81', 'DD-MON-YY'), 1500, 0, 30), 
+(7876, 'ADAMS', 'CLERK', 7788, TO_DATE('23-MAY-87', 'DD-MON-YY'), 1100, NULL, 20), 
+(7900, 'JAMES', 'CLERK', 7698, TO_DATE('03-DEC-81', 'DD-MON-YY'), 950, NULL, 30), 
+(7902, 'FORD', 'ANALYST', 7566, TO_DATE('03-DEC-81', 'DD-MON-YY'), 3000, NULL, 20), 
+(7934, 'MILLER', 'CLERK', 7782, TO_DATE('23-JAN-82', 'DD-MON-YY'), 1300, NULL, 10);
+
+CREATE TABLE dept ( 
+    deptno NUMBER(2) PRIMARY KEY, 
+    dname VARCHAR2(14), 
+    loc VARCHAR2(13) 
+);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7369, 'SMITH', 'CLERK', 7902, TO_DATE('17-DEC-80', 'DD-MON-YY'), 800, 7499, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7499, 'ALLEN', 'SALESMAN', 7698, TO_DATE('20-FEB-81', 'DD-MON-YY'), 1600, 7521, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7521, 'WARD', 'SALESMAN', 7698, TO_DATE('22-FEB-81', 'DD-MON-YY'), 1250, 300, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7566, 'JONES', 'MANAGER', 7839, TO_DATE('02-APR-81', 'DD-MON-YY'), 2975, NULL, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+ 
+(7654, 'MARTIN', 'SALESMAN', 7698, TO_DATE('28-SEP-81', 'DD-MON-YY'), 1250, 1400, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+ 
+(7698, 'BLAKE', 'MANAGER', 7839, TO_DATE('01-MAY-81', 'DD-MON-YY'), 2850, NULL, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7782, 'CLARK', 'MANAGER', 7839, TO_DATE('09-JUN-81', 'DD-MON-YY'), 2450, NULL, 10);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7788, 'SCOTT', 'ANALYST', 7566, TO_DATE('19-APR-87', 'DD-MON-YY'), 3000, NULL, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7839, 'KING', 'PRESIDENT', NULL, TO_DATE('17-NOV-81', 'DD-MON-YY'), 5000, NULL, 10);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7844, 'TURNER', 'SALESMAN', 7698, TO_DATE('08-SEP-81', 'DD-MON-YY'), 1500, 0, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7876, 'ADAMS', 'CLERK', 7788, TO_DATE('23-MAY-87', 'DD-MON-YY'), 1100, NULL, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7900, 'JAMES', 'CLERK', 7698, TO_DATE('03-DEC-81', 'DD-MON-YY'), 950, NULL, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7902, 'FORD', 'ANALYST', 7566, TO_DATE('03-DEC-81', 'DD-MON-YY'), 3000, NULL, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES (7934, 'MILLER', 'CLERK', 7782, TO_DATE('23-JAN-82', 'DD-MON-YY'), 1300, NULL, 10);
+
+select  
+    "EMPNO", 
+    "ENAME", 
+    "JOB", 
+    "MGR", 
+    "HIREDATE", 
+    "SAL", 
+    "COMM", 
+    "DEPTNO" 
+from "EMP";
+
+SELECT name AS "Name", salary * 12 AS "Annual Salary" 
+FROM emp 
+;
+
+SELECT ename AS "Name", sal * 12 AS "Annual Salary" 
+FROM emp 
+;
+
+  	SELECT CONCAT(ename, ' - ', job) AS "Name and Designation" 
+FROM emp 
+	  
+;
+
+  	SELECT CONCAT(ename, job) AS "Name and Designation" 
+FROM emp 
+	  
+;
+
+SELECT ename 
+FROM emp 
+WHERE job = 'Clerk' 
+;
+
+SELECT ename 
+FROM emp 
+WHERE job = 'CLERK' 
+;
+
+SELECT * 
+FROM emp 
+WHERE hiredate < '1981-09-30' 
+;
+
+SELECT * 
+FROM emp 
+WHERE hiredate < '30-SEP-81' 
+ 
+;
+
+SELECT ename 
+FROM emp 
+WHERE empno IN (7369, 7839, 7934, 7788) 
+;
+
+SELECT ename 
+FROM emp 
+WHERE job <> 'MANAGER' 
+;
+
+SELECT ename 
+FROM emp 
+WHERE deptno NOT IN (10, 30, 40) 
+;
+
+SELECT ename 
+FROM emp 
+WHERE hiredate BETWEEN '30-JUN-81' AND '31-DEC-81' 
+;
+
+SELECT DISTINCT job 
+FROM emp 
+;
+
+SELECT ename 
+FROM emp 
+WHERE comm IS NULL 
+;
+
+SELECT ename, job 
+FROM emp 
+WHERE MGR IS NULL 
+;
+
+SELECT ename 
+FROM emp 
+WHERE deptno IS NULL 
+ 
+;
+
+SELECT ename 
+FROM emp 
+WHERE comm IS NOT NULL 
+;
+
+SELECT ename 
+FROM emp 
+WHERE name LIKE 's%' OR name LIKE '%s' 
+ 
+;
+
+SELECT ename 
+FROM emp 
+WHERE ename LIKE 's%' OR ename LIKE '%s' 
+ 
+;
+
+SELECT ename 
+FROM emp 
+WHERE ename LIKE 'S%' OR ename LIKE '%S' 
+ 
+;
+
+SELECT ename AS ename, job, deptno, hiredate 
+FROM emp 
+ORDER BY hiredate ASC 
+ 
+;
+
+SELECT empno, ename, job 
+FROM emp 
+ORDER BY sal * 12 DESC;
+
+select* from emp;
+
+select* from emp;
+
+select* from emp;
+
+select* from dept;
+
+desc dept
+
+
+insert into dept(deptno,dname,loc) 
+values(10,'accounting','newyork');
+
+insert into dept(deptno,dname,loc) 
+values(20,'research','dallas');
+
+insert into dept(deptno,dname,loc) 
+values(30,'sales','chicago');
+
+insert into dept(deptno,dname,loc) 
+values(40,'operations','boston');
+
+select* from dept;
+
+UPDATE DEPT 
+SET LOC = 'CHICAGO' 
+WHERE DEPTNO = 30;
+
+UPDATE DEPT 
+SET LOC = 'CHICAGO' 
+WHERE DEPTNO = 40;
+
+select* dept 
+;
+
+select* from dept 
+;
+
+SAVEPOINT before_delete
+
+
+SAVEPOINT before_delete
+
+
+SAVEPOINT before_delete
+
+
+DELETE FROM dept;
+
+ROLLBACK TO before_delete;
+
+ROLLBACK TO before_delete;
+
+select* from dept;
+
+ROLLBACK TO before_delete;
+
+select* from dept  
+;
+
+select* from dept  
+;
+
+desc dept
+
+
+insert into dept(deptno,dname,loc)  
+values(10,'accounting','newyork');
+
+insert into dept(deptno,dname,loc)  
+values(20,'research','dallas') 
+;
+
+insert into dept(deptno,dname,loc)  
+values(30,'sales','chicago') 
+insert into dept(deptno,dname,loc)  
+values(40,'operations','boston') 
+;
+
+insert into dept(deptno,dname,loc)  
+values(30,'sales','chicago');
+
+insert into dept(deptno,dname,loc)  
+values(40,'operations','boston') 
+;
+
+select* from dept 
+;
+
+select* from emp 
+;
+
+SELECT ename FROM emp 
+WHERE sal > (SELECT sal FROM emp 
+             WHERE empno = 7566);
+
+REM   Script: ep-6-1
+REM   ep6
+
+CREATE TABLE emp ( 
+    empno   NUMBER(4) PRIMARY KEY, 
+    ename   VARCHAR2(10), 
+    job     VARCHAR2(9), 
+    mgr     NUMBER(4), 
+    hiredate DATE, 
+    sal     NUMBER(7,2), 
+    comm    NUMBER(7,2), 
+    deptno  NUMBER(2) 
+);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7369, 'SMITH', 'CLERK', 7902, TO_DATE('17-DEC-80', 'DD-MON-YY'), 800, 7499, 20), 
+(7499, 'ALLEN', 'SALESMAN', 7698, TO_DATE('20-FEB-81', 'DD-MON-YY'), 1600, 7521, 30), 
+(7521, 'WARD', 'SALESMAN', 7698, TO_DATE('22-FEB-81', 'DD-MON-YY'), 1250, 300, 30), 
+(7566, 'JONES', 'MANAGER', 7839, TO_DATE('02-APR-81', 'DD-MON-YY'), 2975, NULL, 20), 
+(7654, 'MARTIN', 'SALESMAN', 7698, TO_DATE('28-SEP-81', 'DD-MON-YY'), 1250, 1400, 30), 
+(7698, 'BLAKE', 'MANAGER', 7839, TO_DATE('01-MAY-81', 'DD-MON-YY'), 2850, NULL, 30), 
+(7782, 'CLARK', 'MANAGER', 7839, TO_DATE('09-JUN-81', 'DD-MON-YY'), 2450, NULL, 10), 
+(7788, 'SCOTT', 'ANALYST', 7566, TO_DATE('19-APR-87', 'DD-MON-YY'), 3000, NULL, 20), 
+(7839, 'KING', 'PRESIDENT', NULL, TO_DATE('17-NOV-81', 'DD-MON-YY'), 5000, NULL, 10), 
+(7844, 'TURNER', 'SALESMAN', 7698, TO_DATE('08-SEP-81', 'DD-MON-YY'), 1500, 0, 30), 
+(7876, 'ADAMS', 'CLERK', 7788, TO_DATE('23-MAY-87', 'DD-MON-YY'), 1100, NULL, 20), 
+(7900, 'JAMES', 'CLERK', 7698, TO_DATE('03-DEC-81', 'DD-MON-YY'), 950, NULL, 30), 
+(7902, 'FORD', 'ANALYST', 7566, TO_DATE('03-DEC-81', 'DD-MON-YY'), 3000, NULL, 20), 
+(7934, 'MILLER', 'CLERK', 7782, TO_DATE('23-JAN-82', 'DD-MON-YY'), 1300, NULL, 10);
+
+CREATE TABLE dept ( 
+    deptno NUMBER(2) PRIMARY KEY, 
+    dname VARCHAR2(14), 
+    loc VARCHAR2(13) 
+);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7369, 'SMITH', 'CLERK', 7902, TO_DATE('17-DEC-80', 'DD-MON-YY'), 800, 7499, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7499, 'ALLEN', 'SALESMAN', 7698, TO_DATE('20-FEB-81', 'DD-MON-YY'), 1600, 7521, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7521, 'WARD', 'SALESMAN', 7698, TO_DATE('22-FEB-81', 'DD-MON-YY'), 1250, 300, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7566, 'JONES', 'MANAGER', 7839, TO_DATE('02-APR-81', 'DD-MON-YY'), 2975, NULL, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+ 
+(7654, 'MARTIN', 'SALESMAN', 7698, TO_DATE('28-SEP-81', 'DD-MON-YY'), 1250, 1400, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+ 
+(7698, 'BLAKE', 'MANAGER', 7839, TO_DATE('01-MAY-81', 'DD-MON-YY'), 2850, NULL, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7782, 'CLARK', 'MANAGER', 7839, TO_DATE('09-JUN-81', 'DD-MON-YY'), 2450, NULL, 10);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7788, 'SCOTT', 'ANALYST', 7566, TO_DATE('19-APR-87', 'DD-MON-YY'), 3000, NULL, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7839, 'KING', 'PRESIDENT', NULL, TO_DATE('17-NOV-81', 'DD-MON-YY'), 5000, NULL, 10);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7844, 'TURNER', 'SALESMAN', 7698, TO_DATE('08-SEP-81', 'DD-MON-YY'), 1500, 0, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7876, 'ADAMS', 'CLERK', 7788, TO_DATE('23-MAY-87', 'DD-MON-YY'), 1100, NULL, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7900, 'JAMES', 'CLERK', 7698, TO_DATE('03-DEC-81', 'DD-MON-YY'), 950, NULL, 30);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES  
+(7902, 'FORD', 'ANALYST', 7566, TO_DATE('03-DEC-81', 'DD-MON-YY'), 3000, NULL, 20);
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
+VALUES (7934, 'MILLER', 'CLERK', 7782, TO_DATE('23-JAN-82', 'DD-MON-YY'), 1300, NULL, 10);
+
+select  
+    "EMPNO", 
+    "ENAME", 
+    "JOB", 
+    "MGR", 
+    "HIREDATE", 
+    "SAL", 
+    "COMM", 
+    "DEPTNO" 
+from "EMP";
+
+SELECT name AS "Name", salary * 12 AS "Annual Salary" 
+FROM emp 
+;
+
+SELECT ename AS "Name", sal * 12 AS "Annual Salary" 
+FROM emp 
+;
+
+  	SELECT CONCAT(ename, ' - ', job) AS "Name and Designation" 
+FROM emp 
+	  
+;
+
+  	SELECT CONCAT(ename, job) AS "Name and Designation" 
+FROM emp 
+	  
+;
+
+SELECT ename 
+FROM emp 
+WHERE job = 'Clerk' 
+;
+
+SELECT ename 
+FROM emp 
+WHERE job = 'CLERK' 
+;
+
+SELECT * 
+FROM emp 
+WHERE hiredate < '1981-09-30' 
+;
+
+SELECT * 
+FROM emp 
+WHERE hiredate < '30-SEP-81' 
+ 
+;
+
+SELECT ename 
+FROM emp 
+WHERE empno IN (7369, 7839, 7934, 7788) 
+;
+
+SELECT ename 
+FROM emp 
+WHERE job <> 'MANAGER' 
+;
+
+SELECT ename 
+FROM emp 
+WHERE deptno NOT IN (10, 30, 40) 
+;
+
+SELECT ename 
+FROM emp 
+WHERE hiredate BETWEEN '30-JUN-81' AND '31-DEC-81' 
+;
+
+SELECT DISTINCT job 
+FROM emp 
+;
+
+SELECT ename 
+FROM emp 
+WHERE comm IS NULL 
+;
+
+SELECT ename, job 
+FROM emp 
+WHERE MGR IS NULL 
+;
+
+SELECT ename 
+FROM emp 
+WHERE deptno IS NULL 
+ 
+;
+
+SELECT ename 
+FROM emp 
+WHERE comm IS NOT NULL 
+;
+
+SELECT ename 
+FROM emp 
+WHERE name LIKE 's%' OR name LIKE '%s' 
+ 
+;
+
+SELECT ename 
+FROM emp 
+WHERE ename LIKE 's%' OR ename LIKE '%s' 
+ 
+;
+
+SELECT ename 
+FROM emp 
+WHERE ename LIKE 'S%' OR ename LIKE '%S' 
+ 
+;
+
+SELECT ename AS ename, job, deptno, hiredate 
+FROM emp 
+ORDER BY hiredate ASC 
+ 
+;
+
+SELECT empno, ename, job 
+FROM emp 
+ORDER BY sal * 12 DESC;
+
+select* from emp;
+
+select* from emp;
+
+select* from emp;
+
+select* from dept;
+
+desc dept
+
+
+insert into dept(deptno,dname,loc) 
+values(10,'accounting','newyork');
+
+insert into dept(deptno,dname,loc) 
+values(20,'research','dallas');
+
+insert into dept(deptno,dname,loc) 
+values(30,'sales','chicago');
+
+insert into dept(deptno,dname,loc) 
+values(40,'operations','boston');
+
+select* from dept;
+
+UPDATE DEPT 
+SET LOC = 'CHICAGO' 
+WHERE DEPTNO = 30;
+
+UPDATE DEPT 
+SET LOC = 'CHICAGO' 
+WHERE DEPTNO = 40;
+
+select* dept 
+;
+
+select* from dept 
+;
+
+SAVEPOINT before_delete
+
+
+SAVEPOINT before_delete
+
+
+SAVEPOINT before_delete
+
+
+DELETE FROM dept;
+
+ROLLBACK TO before_delete;
+
+ROLLBACK TO before_delete;
+
+select* from dept;
+
+ROLLBACK TO before_delete;
+
+select* from dept  
+;
+
+select* from dept  
+;
+
+desc dept
+
+
+insert into dept(deptno,dname,loc)  
+values(10,'accounting','newyork');
+
+insert into dept(deptno,dname,loc)  
+values(20,'research','dallas') 
+;
+
+insert into dept(deptno,dname,loc)  
+values(30,'sales','chicago') 
+insert into dept(deptno,dname,loc)  
+values(40,'operations','boston') 
+;
+
+insert into dept(deptno,dname,loc)  
+values(30,'sales','chicago');
+
+insert into dept(deptno,dname,loc)  
+values(40,'operations','boston') 
+;
+
+select* from dept 
+;
+
+select* from emp 
+;
+
+SELECT ename FROM emp 
+WHERE sal > (SELECT sal FROM emp 
+             WHERE empno = 7566);
+
+SELECT ename FROM emp 
+WHERE job = (SELECT job FROM emp WHERE empno = 7369) 
+AND sal > (SELECT sal FROM emp WHERE empno = 7876);
+
+SELECT ename, job, sal FROM emp 
+WHERE sal = (SELECT MIN(sal) FROM emp);
+
+SELECT deptno, MIN(sal) FROM emp 
+GROUP BY deptno 
+;
+
+SELECT empno, ename, job FROM emp 
+WHERE job <> 'CLERK' AND sal < ANY (SELECT sal FROM emp WHERE job = 'CLERK');
+
+SELECT empno, ename, job FROM emp 
+WHERE sal > (SELECT AVG(sal) FROM emp WHERE deptno = e.deptno);
+
+SELECT empno, ename, job FROM emp e 
+WHERE sal > (SELECT AVG(sal) FROM emp WHERE deptno = e.deptno);
+
+SELECT ename, deptno, sal, comm 
+FROM emp 
+WHERE (sal, NVL(comm, 1)) IN ( 
+  SELECT sal, NVL(comm, 1) 
+  FROM emp 
+  WHERE deptno = 30 
+);
+
+SELECT ename, job, sal 
+FROM employee 
+WHERE sal IN ( 
+  SELECT sal 
+  FROM employee 
+  WHERE ename IN ('SCOTT', 'WARD') 
+);
+
+SELECT ename, job, sal 
+FROM emp 
+WHERE sal IN ( 
+  SELECT sal 
+  FROM emp 
+  WHERE ename IN ('SCOTT', 'WARD') 
+);
+
+SELECT ename, job, deptno, sal 
+FROM emp 
+WHERE job = 'JONES' AND sal > (SELECT sal FROM emp WHERE ename = 'FORD');
+
+SELECT ename, job, deptno, sal 
+FROM employee 
+WHERE job = 'JONES' AND sal > (SELECT sal FROM employee WHERE ename = 'FORD');
+
+SELECT ename, job, deptno, sal 
+FROM emp 
+WHERE job = 'JONES' AND sal > (SELECT sal FROM employee WHERE ename = 'FORD');
+
+SELECT ename, job, deptno, sal 
+FROM emp 
+WHERE job = 'JONES' AND sal > (SELECT sal FROM emp WHERE ename = 'FORD');
+
+with summary as  
+(select ename,sum(sal) as dept_total from emp a, dept b 
+where a.deptno =b.deptno 
+group by ename)
+
+
+select ename,dept_totl from summary 
+where dept_total>(select sum(dept_total)*1/3 from summary) 
+order by dept_total desc;
+
+with summary as  
+(select ename,sum(sal) as dept_total from emp a, dept b 
+where a.deptno =b.deptno 
+group by ename)
+
+
+select ename,dept_total from summary 
+where dept_total>(select sum(dept_total)*1/3 from summary) 
+order by dept_total desc;
+
+with summary as  
+(select ename,sum(sal) as dept_total from emp a, dept b 
+where a.deptno =b.deptno 
+group by ename)
+
+
+select ename,dept_total from summary 
+where dept_total>(select sum(dept_total)*1/3 from summary) 
+order by dept_total desc;
+
+with summary as  
+(select ename,sum(sal) as dept_total from emp a, dept b 
+where a.deptno =b.deptno 
+group by ename)
+
+
+(select ename,sum(sal) as dept_total from emp a, dept b 
+where a.deptno =b.deptno 
+group by ename);
+
+select ename,sum(sal) as dept_total from emp a, dept b 
+where a.deptno =b.deptno 
+group by ename;
+
+select ename,job from emp 
+where deptno=10  
+and job in ('SALES');
+
+select* from emp;
+
+select* from emp where deptno = 10 ;
+
+select job,ename,empno,deptno from emp s 
+where exists(select * from emp where s.empno=mgr) 
+order by empno;
+
